@@ -1,0 +1,24 @@
+name: qwen-agentgateway
+services:
+  gateway:
+    image: cr.agentgateway.dev/agentgateway@sha256:60216aafb03d37f94e952ff3d51d2f630a65b10ecaebdc0a864882f92610c45b
+    network_mode: host
+    user: "${GATEWAY_UID:?Run scripts/bootstrap.py}:${GATEWAY_GID:?Run scripts/bootstrap.py}"
+    restart: unless-stopped
+    env_file: .env
+    command: ["-f", "/config/gateway.yaml"]
+    volumes:
+      - ./gateway.yaml:/config/gateway.yaml:ro
+      - ./runtime/secrets:/secrets:ro
+      - ./runtime/data:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 2g
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"

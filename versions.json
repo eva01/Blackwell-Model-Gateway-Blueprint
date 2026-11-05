@@ -1,0 +1,63 @@
+{
+  "recorded_date": "2026-11-05",
+  "agentgateway": {
+    "version": "1.7.0",
+    "image": "cr.agentgateway.dev/agentgateway@sha256:60216aafb03d37f94e952ff3d51d2f630a65b10ecaebdc0a864882f92610c45b"
+  },
+  "vllm": {
+    "image": "nvcr.io/nvidia/vllm@sha256:0a0de9362545e3e062750bec4ad4f722422a04a81182b5258a7deda4325e9313",
+    "observed_version": "0.31.0+88641915.dev",
+    "observed_torch_version": "2.15.0a0+875d815502.nv26.10",
+    "observed_cuda_runtime": "13.4",
+    "observed_api_system_fingerprint": "vllm-0.31.0+88641915.dev-2038c849",
+    "nvidia_container_release": "26.10-py3"
+  },
+  "model": {
+    "id": "nvidia/Qwen3.8-27B-NVFP4",
+    "revision": "482ca0f3832238542f8f5295dde86b5f22711d80",
+    "backend_alias": "qwen",
+    "gateway_alias": "qwen-coder"
+  },
+  "prototype": {
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "reported_memory_mib": 97887,
+    "driver": "595.112.07",
+    "configured_total_context": 262144,
+    "max_num_seqs": 1,
+    "kv_cache_dtype": "fp8_e4m3",
+    "gpu_memory_utilization": 0.8,
+    "compute_capability": "12.0"
+  },
+  "deployment_target": {
+    "gpu": "NVIDIA B200 MIG 4g.90gb",
+    "scheduler": "Slurm",
+    "user_access": "Open OnDemand",
+    "execution_status": "Not executed on target hardware",
+    "commissioning_total_context": 262144,
+    "desired_prompt_tokens": 200000,
+    "compute_capability": "10.0",
+    "default_output_allowance": 32768
+  },
+  "release_audit": {
+    "date": "2026-11-05",
+    "evidence": "evidence/release-audit.json",
+    "interpretation": "docs/reference/release-audit.md",
+    "selected_pins_current": true,
+    "site_driver_and_scheduler_not_verified": true
+  },
+  "gpu_profiles": {
+    "default": "auto",
+    "rtx-pro-6000": {
+      "compute_capability": "12.0",
+      "sm": "sm120",
+      "role": "Standalone demo only"
+    },
+    "b200": {
+      "compute_capability": "10.0",
+      "sm": "sm100",
+      "allocation": "One full GPU or one MIG 4g.90gb device",
+      "execution_status": "Not executed on target hardware"
+    },
+    "primary_target": "B200 MIG 4g.90gb"
+  }
+}

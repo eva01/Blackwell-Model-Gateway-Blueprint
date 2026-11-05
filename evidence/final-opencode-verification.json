@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-05",
+  "scope": "OpenCode scratch edit/test through agentgateway loopback on RTX prototype; no site/HTTPS claim",
+  "opencode_version": "1.19.5",
+  "baseline_exit": 1,
+  "agent_exit": 0,
+  "test_exit": 0,
+  "tests": 3,
+  "tests_and_config_unchanged": true,
+  "seconds": 11.993,
+  "passed": true,
+  "sanitization_note": "Historical report: institution, deployment identifiers and aliases were generalized for distribution. Outcomes are retained; this is not a fresh run of the renamed package. Source artifact hashes refer to the original private artifacts."
+}

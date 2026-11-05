@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-05",
+  "scope": "Probe validation on the existing cloud RTX PRO 6000 prototype; not site acceptance",
+  "helper_tests_passed": 8,
+  "prototype_checks": [
+    {
+      "vantage": "service_account",
+      "uid": 1000,
+      "target": "127.0.0.1:8000",
+      "expected": "allowed",
+      "observation": "reachable",
+      "exit_code": 0
+    },
+    {
+      "vantage": "unprivileged_local_account",
+      "uid": 65534,
+      "target": "127.0.0.1:8000",
+      "expected": "blocked",
+      "observation": "reachable",
+      "exit_code": 1
+    }
+  ],
+  "interpretation": "The prototype loopback listener is accessible to unrelated local processes. The negative check correctly failed; this is not shared-node isolation acceptance.",
+  "site_execution": "Not executed; user requested mandatory administrator-run handover checks",
+  "network_changes_applied": false,
+  "acceptance_gate": "docs/deploy/b200-slurm.md section 4.1",
+  "limitations": [
+    "TCP observations do not prove authentication or firewall enforcement",
+    "site must supply bracketing authenticated gateway checks, blocked-client-network/same-node reports and enforced-configuration evidence",
+    "All eight helper tests passed; the new probe has four tests"
+  ],
+  "sanitization_note": "Historical report: institution, deployment identifiers and aliases were generalized for distribution. Outcomes are retained; this is not a fresh run of the renamed package. Source artifact hashes refer to the original private artifacts."
+}

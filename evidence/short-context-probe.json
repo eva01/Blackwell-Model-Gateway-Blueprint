@@ -1,0 +1,23 @@
+{
+  "timestamp_utc": "2026-11-05T11:22:27.950877+00:00",
+  "synthetic_probe": true,
+  "requested_prompt_tokens": 2048,
+  "tokenizer_count": 2054,
+  "usage": {
+    "prompt_tokens": 2054,
+    "total_tokens": 2073,
+    "completion_tokens": 19,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "created_cache_tokens": 1568
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "time_to_first_content_seconds": 0.2447125379985664,
+  "total_seconds": 0.6062389899998379,
+  "needle_retrieved": true,
+  "passed": true,
+  "sanitization_note": "Historical report: institution, deployment identifiers and aliases were generalized for distribution. Outcomes are retained; this is not a fresh run of the renamed package. Source artifact hashes refer to the original private artifacts."
+}

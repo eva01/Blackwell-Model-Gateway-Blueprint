@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-11-05T11:32:07.173472+00:00",
+  "date_in_user_timezone": "2026-11-05",
+  "timezone": "Asia/Kuala_Lumpur",
+  "agentgateway": {
+    "latest_stable": "1.7.0",
+    "published_at": "2026-10-27T17:18:28Z",
+    "source": "https://api.github.com/repos/agentgateway/agentgateway/releases/latest",
+    "registry_tag": "cr.agentgateway.dev/agentgateway:v1.7.0",
+    "verified_registry_digest": "sha256:60216aafb03d37f94e952ff3d51d2f630a65b10ecaebdc0a864882f92610c45b"
+  },
+  "nvidia_vllm": {
+    "latest_documented_release": "26.10",
+    "registry_tag": "nvcr.io/nvidia/vllm:26.10-py3",
+    "verified_registry_digest": "sha256:0a0de9362545e3e062750bec4ad4f722422a04a81182b5258a7deda4325e9313",
+    "source": "https://docs.nvidia.com/deeplearning/frameworks/vllm-release-notes/rel-26-10.html"
+  },
+  "model": {
+    "id": "nvidia/Qwen3.8-27B-NVFP4",
+    "current_revision": "482ca0f3832238542f8f5295dde86b5f22711d80",
+    "last_modified": "2026-09-17T17:16:07.000Z",
+    "source": "https://huggingface.co/api/models/nvidia/Qwen3.8-27B-NVFP4"
+  },
+  "site_reference_releases": {
+    "NVIDIA/pyxis": "v0.24.0",
+    "NVIDIA/enroot": "v4.2.1",
+    "anomalyco/opencode": "v1.19.5"
+  },
+  "upstream_vllm": {
+    "latest_api_tag": "v0.33.0rc3",
+    "latest_api_prerelease_flag": false,
+    "latest_final_semver_in_recent_release_list": "v0.32.0",
+    "selection": "Retain current NVIDIA container; do not replace bundled dependencies independently"
+  },
+  "site_inventory_verified": false,
+  "runtime_upgrade_required_for_selected_pins": false,
+  "runtime_changed": false,
+  "sanitization_note": "Historical report: institution, deployment identifiers and aliases were generalized for distribution. Outcomes are retained; this is not a fresh run of the renamed package. Source artifact hashes refer to the original private artifacts."
+}

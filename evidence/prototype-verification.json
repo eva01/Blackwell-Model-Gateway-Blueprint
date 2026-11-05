@@ -1,0 +1,162 @@
+{
+  "timestamp_utc": "2026-11-05T11:21:58.535025+00:00",
+  "run": "acceptance-e660df06cd",
+  "hardware_scope": "Backend hardware must be recorded separately",
+  "checks": {
+    "missing_key_rejected": {
+      "passed": true,
+      "details": {
+        "status": 401
+      }
+    },
+    "invalid_key_rejected": {
+      "passed": true,
+      "details": {
+        "status": 401
+      }
+    },
+    "admin_auth_required": {
+      "passed": true,
+      "details": {
+        "status": 401
+      }
+    },
+    "hybrid_storage": {
+      "passed": true,
+      "details": null
+    },
+    "protected_ui_served": {
+      "passed": true,
+      "details": null
+    },
+    "key_activation-user": {
+      "passed": true,
+      "details": null
+    },
+    "model_list": {
+      "passed": true,
+      "details": null
+    },
+    "user_cannot_administer": {
+      "passed": true,
+      "details": {
+        "status": 401
+      }
+    },
+    "no_admin_on_model_listener": {
+      "passed": true,
+      "details": {
+        "status": 400
+      }
+    },
+    "key_activation-restricted": {
+      "passed": true,
+      "details": null
+    },
+    "model_scope_enforced": {
+      "passed": true,
+      "details": {
+        "status": 403
+      }
+    },
+    "chat_and_usage": {
+      "passed": true,
+      "details": {
+        "status": 200,
+        "seconds": 0.205,
+        "usage": {
+          "prompt_tokens": 53,
+          "completion_tokens": 5,
+          "total_tokens": 58,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "created_cache_tokens": 0,
+            "multimodal_tokens": null
+          }
+        }
+      }
+    },
+    "streaming_and_usage": {
+      "passed": true,
+      "details": {
+        "usage": {
+          "prompt_tokens": 18,
+          "total_tokens": 23,
+          "completion_tokens": 5,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "created_cache_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        }
+      }
+    },
+    "tool_call": {
+      "passed": true,
+      "details": null
+    },
+    "tool_arguments": {
+      "passed": true,
+      "details": null
+    },
+    "tool_result_round_trip": {
+      "passed": true,
+      "details": null
+    },
+    "key_activation-budget": {
+      "passed": true,
+      "details": null
+    },
+    "budget_initial_request": {
+      "passed": true,
+      "details": null
+    },
+    "token_budget_blocks_later_request": {
+      "passed": true,
+      "details": {
+        "status": 429
+      }
+    },
+    "key_survives_restart": {
+      "passed": true,
+      "details": null
+    },
+    "budget_survives_restart": {
+      "passed": true,
+      "details": null
+    },
+    "revocation": {
+      "passed": true,
+      "details": null
+    },
+    "sqlite_integrity": {
+      "passed": true,
+      "details": null
+    },
+    "durable_per_user_usage": {
+      "passed": true,
+      "details": {
+        "requests": 9,
+        "input_tokens": 685,
+        "output_tokens": 45
+      }
+    },
+    "no_prompt_response_payloads": {
+      "passed": true,
+      "details": {
+        "payload_rows": 0
+      }
+    },
+    "no_prompt_in_log_attributes": {
+      "passed": true,
+      "details": null
+    }
+  },
+  "passed": true,
+  "sanitization_note": "Historical report: institution, deployment identifiers and aliases were generalized for distribution. Outcomes are retained; this is not a fresh run of the renamed package. Source artifact hashes refer to the original private artifacts."
+}

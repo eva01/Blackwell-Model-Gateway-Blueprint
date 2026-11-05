@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-05",
+  "scope": "Current local operator sample, independent code review and one additional live streaming-budget probe",
+  "fixed": {
+    "issue": "keys.py list could print UI-stored raw credentials",
+    "change": "Create/list output now uses an allowlisted resource summary without key values, hashes or arbitrary metadata",
+    "regression_test_failed_before_fix": true,
+    "helper_tests_passed_after_fix": 4,
+    "live_list_summary_checked": true,
+    "independent_fix_review": "No actionable regressions found"
+  },
+  "live_stream_budget_probe": {
+    "stream_options_omitted": true,
+    "budget_tokens": 1,
+    "first_http_status": 200,
+    "done_received": true,
+    "prompt_tokens": 16,
+    "completion_tokens": 2,
+    "total_tokens": 18,
+    "next_request_http_status": 429,
+    "temporary_key_revoked": true
+  },
+  "site_acceptance_gaps": [
+    "Backend listener isolation from unauthorized remote and same-node callers",
+    "Unique backend port reservation for services sharing a node",
+    "Request admission, competing-user fairness, client cancellation and queue behavior",
+    "Slurm job renewal, node changes, complete restore and crash accounting",
+    "B200 MIG execution, 200K real input and OpenCode edit/test acceptance"
+  ],
+  "deployment_changes": "Local helper and guide updated; no new runtime admission policy, cluster change, Git commit or publication",
+  "recommendation": "Supervised pilot; qualify the recorded site gaps before class-wide use",
+  "sanitization_note": "Historical report: institution, deployment identifiers and aliases were generalized for distribution. Outcomes are retained; this is not a fresh run of the renamed package. Source artifact hashes refer to the original private artifacts."
+}

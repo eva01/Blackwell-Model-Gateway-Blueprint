@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-05",
+  "environment": "RTX PRO 6000 Blackwell prototype; agentgateway 1.7.0; existing Qwen vLLM backend",
+  "method": "Live Chrome browser through Playwright; user entered credentials directly",
+  "ui_url": "http://127.0.0.1:14002/ui/llm/playground",
+  "model": "qwen-coder",
+  "fix": "Native Apply CORS action saved exact browser origin in SQLite; supplied existing hashed virtual key through Raw API key field",
+  "cors": {
+    "allowOrigins": [
+      "http://127.0.0.1:14002"
+    ],
+    "allowMethods": [
+      "GET",
+      "POST"
+    ],
+    "allowHeaders": [
+      "*"
+    ]
+  },
+  "checks": {
+    "empty_key_http_status": 401,
+    "allowed_origin_preflight_matches": true,
+    "untrusted_origin_has_no_allow_origin_header": true,
+    "cors_persists_after_gateway_restart": true,
+    "both_origin_checks_repeated_after_restart": true,
+    "same_key_works_after_restart": true,
+    "conversation_history_retained": true
+  },
+  "completions": [
+    {
+      "test": "exact_marker",
+      "response": "PLAYGROUND_OK",
+      "http_status": 200,
+      "ui_latency_ms": 654,
+      "input_tokens": 29,
+      "output_tokens": 4
+    },
+    {
+      "test": "recall_marker_and_generate_palindrome_function",
+      "marker_recalled": "PLAYGROUND_OK",
+      "function_and_three_asserts_present": true,
+      "http_status": 200,
+      "ui_latency_display": "2.2s",
+      "input_tokens": 88,
+      "output_tokens": 82
+    },
+    {
+      "test": "after_gateway_restart",
+      "response": "RESTART_OK",
+      "http_status": 200,
+      "ui_latency_ms": 891,
+      "input_tokens": 189,
+      "output_tokens": 4
+    }
+  ],
+  "limits": [
+    "Native playground requests are non-streaming; streaming was tested separately in prototype-verification.json",
+    "Generated code was inspected, not executed in this browser check",
+    "Individual request timings are not a benchmark",
+    "No B200 MIG, long-context or OpenCode end-to-end acceptance implied",
+    "No exhaustive administrator UI acceptance implied"
+  ],
+  "upstream_source": "https://github.com/agentgateway/agentgateway/blob/v1.7.0/ui/src/api/playgroundApi.ts",
+  "sanitization_note": "Historical report: institution, deployment identifiers and aliases were generalized for distribution. Outcomes are retained; this is not a fresh run of the renamed package. Source artifact hashes refer to the original private artifacts."
+}

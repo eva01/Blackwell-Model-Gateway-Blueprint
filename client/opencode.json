@@ -1,0 +1,40 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "inference": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Private inference",
+      "options": {
+        "baseURL": "{env:INFERENCE_BASE_URL}",
+        "apiKey": "{env:INFERENCE_API_KEY}",
+        "headerTimeout": 1800000,
+        "chunkTimeout": 1800000,
+        "timeout": 1800000
+      },
+      "models": {
+        "qwen-coder": {
+          "name": "Qwen3.8-27B NVFP4",
+          "reasoning": true,
+          "tool_call": true,
+          "interleaved": {
+            "field": "reasoning_content"
+          },
+          "options": {
+            "reasoningEffort": "xhigh"
+          },
+          "variants": {
+            "low": { "reasoningEffort": "low" },
+            "medium": { "reasoningEffort": "medium" },
+            "high": { "disabled": true },
+            "xhigh": { "reasoningEffort": "xhigh" }
+          },
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
+        }
+      }
+    }
+  },
+  "model": "inference/qwen-coder"
+}

@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-05",
+  "scope": "Earlier direct-vLLM RTX prototype experiments; separate from agentgateway acceptance and unexecuted B200 acceptance",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "driver": "595.112.07",
+  "model": "nvidia/Qwen3.8-27B-NVFP4",
+  "model_revision": "482ca0f3832238542f8f5295dde86b5f22711d80",
+  "image": "nvcr.io/nvidia/vllm@sha256:0a0de9362545e3e062750bec4ad4f722422a04a81182b5258a7deda4325e9313",
+  "opencode_version": "1.19.5",
+  "long_context": {
+    "input_tokens": 200041,
+    "output_tokens": 73,
+    "ttft_seconds": 47.225314072000174,
+    "total_seconds": 48.90579083200009,
+    "sampled_gpu_peak_mib": 82605,
+    "retrieval_passed": true,
+    "retrieved_facts": 5,
+    "scope": "One synthetic distributed-fact retrieval request, thinking disabled; not 200K coding or B200 capacity"
+  },
+  "coding": {
+    "english": {
+      "seconds": 48.07954806700036,
+      "visible_tests": 5,
+      "holdout_tests": 14,
+      "both_suites_passed": true,
+      "tests_unchanged": true,
+      "config_unchanged": true,
+      "reasoning_tokens": 0
+    },
+    "malay": {
+      "seconds": 45.32494176899945,
+      "visible_tests": 5,
+      "holdout_tests": 14,
+      "both_suites_passed": true,
+      "tests_unchanged": true,
+      "config_unchanged": true,
+      "reasoning_tokens": 0
+    }
+  },
+  "coding_conditions": "Pinned working directory and thinking disabled; earlier unpinned trials did not pass. Small synthetic task, not general benchmark. Direct vLLM endpoint, not final gateway/HTTPS path.",
+  "source_sha256": {
+    "2026-11-05-qwen-cloud/validated-summary.json": "fd5892ed20c945f4907737c9e3c4e05bca44e5b3375d92b045fdab7cb9b0d113",
+    "2026-11-05-qwen-cloud/evidence/context-200000.json": "856b502b74771681a91efc49fb7d5b49cd236019be81b87f081c06d170f74104",
+    "2026-11-05-agentic-coding/pinned-directory/verified-summary.json": "bc45094bb6fdaf71c95de73be80c3427de403020a62ceb30b1b849df63c7d37d"
+  },
+  "sanitization_note": "Historical report: institution, deployment identifiers and aliases were generalized for distribution. Outcomes are retained; this is not a fresh run of the renamed package. Source artifact hashes refer to the original private artifacts."
+}

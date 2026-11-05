@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-05",
+  "verified_at_utc": "2026-11-05T12:38:46Z",
+  "shutdown_requested": true,
+  "deletion_requested": true,
+  "final_cloud_inventory": "No instances in the selected organization",
+  "removed_from_cloud_inventory": true,
+  "private_recovery_archives_verified": 2,
+  "sqlite_restore_integrity": "ok",
+  "preserved_experiments": [
+    "RTX inference configuration and evidence",
+    "MalayMMLU pilot",
+    "all three agentic coding trial directories",
+    "agentgateway SQLite configuration and consistent database backup",
+    "legacy gateway configuration and PostgreSQL export",
+    "final OpenCode scratch source, tests and transcript"
+  ],
+  "excluded_regenerable_assets": [
+    "model weight caches",
+    "container image caches",
+    "installed dependency caches"
+  ],
+  "operator_package_contains_credentials": false,
+  "site_target_deployed": false,
+  "note": "Local playground and prototype model endpoints are retired. site deployment uses new credentials and the pinned downloadable artifacts. Private recovery archives are stored locally outside the operator ZIP.",
+  "sanitization_note": "Historical report: institution, deployment identifiers and aliases were generalized for distribution. Outcomes are retained; this is not a fresh run of the renamed package. Source artifact hashes refer to the original private artifacts."
+}

@@ -1,0 +1,16 @@
+title = "Blackwell blueprint secret detection"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "agentgateway-virtual-key"
+description = "Agentgateway virtual API key"
+regex = '''agw_sk_[A-Za-z0-9_-]{24,}'''
+keywords = ["agw_sk_"]
+
+[[rules]]
+id = "assigned-backend-key"
+description = "Long assigned backend credential"
+regex = '''(?i)(?:[a-z][a-z0-9_]*_API_KEY|backend_key|password)["']?\s*[=:]\s*["']?([a-z0-9_+/=-]{32,})'''
+secretGroup = 1

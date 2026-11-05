@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=https://agentgateway.dev/schema/config
+config:
+  adminAddr: off
+  statsAddr: 127.0.0.1:15021
+  readinessAddr: 127.0.0.1:15022
+  storage:
+    mode: hybrid
+  database:
+    url: sqlite:///data/agentgateway.db
+  standardAttributes:
+    user: 'coalesce(apiKey.user, apiKey.name, basicAuth.username, null)'
+  logging:
+    level: info
+    format: json
+frontendPolicies:
+  logging:
+    database:
+      llm: metadata
+gateways:
+  inference:
+    bindAddress: 127.0.0.1
+    port: 4001
+  management:
+    bindAddress: 127.0.0.1
+    port: 14002
+ui:
+  gateways: management
+  policies:
+    basicAuth:
+      mode: strict
+      realm: Gateway administration
+      htpasswd:
+        file: /secrets/admin.htpasswd
+llm:
+  gateways: inference
+  policies:
+    apiKey:
+      mode: strict
+      keys: []
+    timeout:
+      requestTimeout: 1800s
+      backendRequestTimeout: 1800s
+      responseIdleTimeout: 1800s
+  models:
+    - name: qwen-coder
+      provider: openAI
+      params:
+        model: qwen
+        baseUrl: ${VLLM_BASE_URL}
+        apiKey:
+          file: /secrets/backend.key
+      defaults:
+        temperature: 1.0
+        top_p: 0.95
+        top_k: 20
+        min_p: 0.0
+        presence_penalty: 0.0
+        repetition_penalty: 1.0
+        reasoning_effort: xhigh
+        chat_template_kwargs:
+          enable_thinking: true
+          preserve_thinking: true
